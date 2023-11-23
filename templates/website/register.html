@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+<body>
+ <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand me-auto" href="#">Logo</a>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2 active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="#">Find Hospitals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="{% url 'register' %}">Register Hospitals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#" class="login-button">Login</a>
+            <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+
+ <section>
+            <div class="block">
+                <div class="fixed-bg" style="background-color: #1a76d1;"></div>
+                <div class="page-title-wrapper text-center">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <div class="page-title-inner">
+                            <h1 itemprop="headline">Register Reservation</h1>
+                                <span>A Greate Restaurant Website</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section>
+            <div class="block top-padd30 gray-bg">
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                                <div class="sec-box">
+                                <div class="reservation-tabs-wrapper">
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-12 col-lg-3">
+                                            <div class="reservation-tabs-list brd-rd5">
+                                                  <div class="register-tab nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                                    <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true"><a href="#reservation-tab1" data-toggle="tab">
+                                                        <span class="brd-rd50">1</span> Information</a></button>
+                                                    <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false"><a href="#reservation-tab2" data-toggle="tab">
+                                                            <span class="brd-rd50">2</span> Select Package
+                                                        </a></button>
+                                                    <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false"><a href="#reservation-tab3" data-toggle="tab"><span class="brd-rd50">3</span> Payment Information</a></button>
+                                                    <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"><a href="#reservation-tab4" data-toggle="tab"><span class="brd-rd50">4</span> Activation</a></button>
+                                                  </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 col-sm-12 col-lg-9">
+                                            <div class="reservation-tab-content">
+                                               <div class="tab-content" id="v-pills-tabContent">
+                                                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"><form class="restaurant-info-form brd-rd5">
+                                                            <div class="row mrg20">
+                                                                <div class="col-md-6 col-sm-6 col-lg-6">
+                                                                    <label>Restaurant name <sup>*</sup></label>
+                                                                    <input class="brd-rd3" type="text">
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-6 col-lg-6">
+                                                                    <label>Restaurant Phone <sup>*</sup></label>
+                                                                    <input class="brd-rd3" type="text">
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-6 col-lg-6">
+                                                                    <label>Manager Name <sup>*</sup></label>
+                                                                    <input class="brd-rd3" type="text">
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-6 col-lg-6">
+                                                                    <label>Manager Contact phone <sup>*</sup></label>
+                                                                    <input class="brd-rd3" type="text">
+                                                                </div>
+                                                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                                                    <label>Contact Email <sup>*</sup></label>
+                                                                    <input class="brd-rd3" type="email">
+                                                                </div>
+                                                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                                                    <h4 itemprop="headline">LOCATION</h4>
+                                                                </div>
+                                                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                                                    <label>Country <sup>*</sup></label>
+                                                                    <div class="select-wrp">
+                                                                        <select>
+                                                                            <option>Pakistan</option>
+                                                                            <option>India</option>
+                                                                            <option>USA</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-6 col-lg-6">
+                                                                    <label>State <sup>*</sup></label>
+                                                                    <input class="brd-rd3" type="text">
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-6 col-lg-6">
+                                                                    <label>City <sup>*</sup></label>
+                                                                    <div class="select-wrp">
+                                                                        <select>
+                                                                            <option>Karachi</option>
+                                                                            <option>Multan</option>
+                                                                            <option>Lahore</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-6 col-lg-6">
+                                                                    <label>Latitude <sup>*</sup></label>
+                                                                    <input class="brd-rd3" type="text">
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-6 col-lg-6">
+                                                                    <label>Longitude <sup>*</sup></label>
+                                                                    <input class="brd-rd3" type="text">
+                                                                </div>
+                                                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                                                    <div class="loc-map2">
+                                                                        <div class="loc-map" id="loc-map"></div>
+                                                                        <div class="loc-srch">
+                                                                            <input class="brd-rd3" type="text" placeholder="Type Your Address">
+                                                                            <button class="brd-rd3 red-bg" type="submit">Search Now</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12 col-sm-6 col-lg-12">
+                                                                    <label>Delivery/Pickup <sup>*</sup></label>
+                                                                    <div class="select-wrp">
+                                                                        <select>
+                                                                            <option>Select 1</option>
+                                                                            <option>Select 2</option>
+                                                                            <option>Select 3</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12 col-sm-6 col-lg-12">
+                                                                    <label>Cuisines <sup>*</sup></label>
+                                                                    <div class="select-wrp">
+                                                                        <select>
+                                                                            <option>Select 1</option>
+                                                                            <option>Select 2</option>
+                                                                            <option>Select 3</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                                                    <h4 itemprop="headline">SIGNUP FIELDS</h4>
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-6 col-lg-6">
+                                                                    <label>Username <sup>*</sup></label>
+                                                                    <input class="brd-rd3" type="text">
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-6 col-lg-6">
+                                                                    <label>Email <sup>*</sup></label>
+                                                                    <input class="brd-rd3" type="email">
+                                                                </div>
+                                                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                                                    <div class="check-box">
+                                                                        <input type="checkbox" id="agrement">
+                                                                        <label for="agrement">Accept Terms and conditions</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                                                    <div class="step-buttons">
+                                                                        <a class="brd-rd3 red-bg" href="#" title="" itemprop="url">Next Step</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form></div>
+                                                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">  <div class="select-package-wrapper">
+                                                            <h4 itemprop="headline">BUY MEMBERSHIP</h4>
+                                                            <div class="remove-ext3">
+                                                                <div class="row mrg10">
+                                                                    <div class="col-md-4 col-sm-4 col-lg-4">
+                                                                        <div class="packege-box brd-rd5 text-center">
+                                                                            <div class="package-header brd-rd5">
+                                                                                <h4 itemprop="headline">BASIC FREE</h4>
+                                                                                <span class="red-clr">$15.00 / <small>MO</small></span>
+                                                                            </div>
+                                                                            <ul class="package-body">
+                                                                                <li>Membership Duration</li>
+                                                                                <li>Restaurant Duration</li>
+                                                                                <li>Number of Tags</li>
+                                                                                <li>Reviews</li>
+                                                                                <li>Phone Number</li>
+                                                                                <li>Website Link</li>
+                                                                            </ul>
+                                                                            <a class="brd-rd2" href="#" title="" itemprop="url">SELECT PLAN</a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-sm-4 col-lg-4">
+                                                                        <div class="packege-box brd-rd5 text-center">
+                                                                            <div class="package-header brd-rd5">
+                                                                                <h4 itemprop="headline">BASIC FREE</h4>
+                                                                                <span class="red-clr">$15.00 / <small>MO</small></span>
+                                                                            </div>
+                                                                            <ul class="package-body">
+                                                                                <li>Membership Duration</li>
+                                                                                <li>Restaurant Duration</li>
+                                                                                <li>Number of Tags</li>
+                                                                                <li>Reviews</li>
+                                                                                <li>Phone Number</li>
+                                                                                <li>Website Link</li>
+                                                                            </ul>
+                                                                            <a class="brd-rd2" href="#" title="" itemprop="url">SELECT PLAN</a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-sm-4 col-lg-4">
+                                                                        <div class="packege-box brd-rd5 text-center">
+                                                                            <div class="package-header brd-rd5">
+                                                                                <h4 itemprop="headline">BASIC FREE</h4>
+                                                                                <span class="red-clr">$15.00 / <small>MO</small></span>
+                                                                            </div>
+                                                                            <ul class="package-body">
+                                                                                <li>Membership Duration</li>
+                                                                                <li>Restaurant Duration</li>
+                                                                                <li>Number of Tags</li>
+                                                                                <li>Reviews</li>
+                                                                                <li>Phone Number</li>
+                                                                                <li>Website Link</li>
+                                                                            </ul>
+                                                                            <a class="brd-rd2" href="#" title="" itemprop="url">SELECT PLAN</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="step-buttons">
+                                                                <a class="brd-rd3" href="#" title="" itemprop="url">Back Step</a>
+                                                                <a class="brd-rd3 red-bg" href="#" title="" itemprop="url">Next Step</a>
+                                                            </div>
+                                                        </div></div>
+                                                        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"><form class="restaurant-info-form brd-rd5">
+                                                            <div class="row mrg20">
+                                                                <div class="col-md-6 col-sm-6 col-lg-6">
+                                                                    <label>First Name <sup>*</sup></label>
+                                                                    <input class="brd-rd3" type="text">
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-6 col-lg-6">
+                                                                    <label>Last Name <sup>*</sup></label>
+                                                                    <input class="brd-rd3" type="text">
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-6 col-lg-6">
+                                                                    <label>Email <sup>*</sup></label>
+                                                                    <input class="brd-rd3" type="email">
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-6 col-lg-6">
+                                                                    <label>Phone <sup>*</sup></label>
+                                                                    <input class="brd-rd3" type="text">
+                                                                </div>
+                                                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                                                    <label>Address <sup>*</sup></label>
+                                                                    <textarea class="brd-rd3"></textarea>
+                                                                </div>
+                                                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                                                    <div class="step-buttons">
+                                                                        <a class="brd-rd3" href="#" title="" itemprop="url">Back Step</a>
+                                                                        <a class="brd-rd3 red-bg" href="#" title="" itemprop="url">Next Step</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form></div>
+                                                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"><div class="order-wrapper2 brd-rd5">
+                                                            <h4 itemprop="headlie">YOUR ORDER</h4>
+                                                            <ul class="ordr-lst brd-rd5">
+                                                                <li class="lst-hed">PRODUCT <span>TOTAL</span></li>
+                                                                <li>Product X 1 <span>$90.00</span></li>
+                                                                <li>Subtotal <span>$90.00</span></li>
+                                                                <li>Gov Tax <span>$2.70</span></li>
+                                                                <li class="red-bg">Total <span>$92.70</span></li>
+                                                            </ul>
+                                                            <div class="pay-mnt">
+                                                                <span class="radio-box">
+                                                                    <input type="radio" name="pay-mthd" id="mthd1">
+                                                                    <label for="mthd1">Direct Bank Transfer</label>
+                                                                </span>
+                                                                <span class="radio-box">
+                                                                    <input type="radio" name="pay-mthd" id="mthd2">
+                                                                    <label for="mthd2">Check payments</label>
+                                                                </span>
+                                                                <span class="radio-box">
+                                                                    <input type="radio" name="pay-mthd" id="mthd3">
+                                                                    <label for="mthd3">Cash on delivery</label>
+                                                                </span>
+                                                                <span class="radio-box">
+                                                                    <input type="radio" name="pay-mthd" id="mthd4">
+                                                                    <label for="mthd4">Paypal <img src="assets/images/pay-mthd-img.jpg" alt="pay-mthd-img.jpg" itemprop="image"></label>
+                                                                </span>
+                                                            </div>
+                                                            <div class="ordr-btn">
+                                                                <a class="red-bg brd-rd5" href="#" title="" itemprop="url">Place Order</a>
+                                                            </div>
+                                                        </div></div>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div><!-- Section Box -->
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+        </section>
+
+
+  <!-- Footer -->
+        <footer>
+            <div class="block top-padd80 bottom-padd80 dark-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <div class="footer-data">
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-6 col-lg-3">
+                                        <div class="widget about_widget wow fadeIn" data-wow-delay="0.1s">
+                                            <div class="logo"><h1 itemprop="headline"><a href="#" title="Home" itemprop="url"><img src="assets/images/logo.png" alt="logo.png" itemprop="image"></a></h1></div>
+                                            <p itemprop="description">MedSelect helps you find a hosptal that best suits your needs and thus saves time and resources</p>
+                                            <div class="social2">
+                                                <a class="brd-rd50" href="#" title="Facebook" itemprop="url" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                <a class="brd-rd50" href="#" title="Google Plus" itemprop="url" target="_blank"><i class="fa fa-google-plus"></i></a>
+                                                <a class="brd-rd50" href="#" title="Twitter" itemprop="url" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                <a class="brd-rd50" href="#" title="Pinterest" itemprop="url" target="_blank"><i class="fa fa-pinterest"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-lg-3">
+                                        <div class="widget information_links wow fadeIn" data-wow-delay="0.2s">
+                                            <h4 class="widget-title" itemprop="headline">INFORMATION</h4>
+                                            <ul>
+                                                <li><a href="#" title="" itemprop="url">Careers</a></li>
+                                                <li><a href="#" title="" itemprop="url">Investor Relations</a></li>
+                                                <li><a href="#" title="" itemprop="url">More Branches</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-lg-3">
+                                        <div class="widget customer_care wow fadeIn" data-wow-delay="0.3s">
+                                            <h4 class="widget-title" itemprop="headline">QUICK LINKS</h4>
+                                            <ul>
+                                                <li><a href="#" title="" itemprop="url">Find Hospitals</a></li>
+                                                <li><a href="#" title="" itemprop="url">Register Hospital</a></li>
+                                                <li><a href="#" title="" itemprop="url">Blog</a></li>
+                                                <li><a href="#" title="" itemprop="url">Contact Us</a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-lg-3">
+                                        <div class="widget get_in_touch wow fadeIn" data-wow-delay="0.4s">
+                                            <h4 class="widget-title" itemprop="headline">GET IN TOUCH</h4>
+                                            <ul>
+                                               <li><i class="fa fa-map-marker"></i>  InnovateSolutions, Innovate Building, Nairobi, Kenya.</li>
+                                               <li><i class="fa fa-phone"></i> +(254) 768764442</li>
+                                               <li><i class="fa fa-envelope"></i> <a href="#" title="" itemprop="url"><span class="__cf_email__" data-cfemail="b5ddd0d9d9daf5ccdac0c7d1dad8d4dcdb9bd6dad8">[email&#160;protected]</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- Footer Data -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--botton bar-->
+        <div class="bottom-bar dark-bg text-center">
+            <div class="container">
+                <p itemprop="description">&copy; 2023 <a class="red-clr" href="http://medselect.com/" title="MedSelect" itemprop="url" target="_blank">MedSelect</a>. All Rights Reserved</p>
+            </div>
+        </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+</html>
