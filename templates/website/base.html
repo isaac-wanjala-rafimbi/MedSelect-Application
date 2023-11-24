@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Base</title>
+      <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+    <link rel="stylesheet" href="{% static 'stylings/num2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icofont.min.css'  %}">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+<body>
+ {% block navbar %}
+   <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand me-auto" href="#">Logo</a>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2 active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="#">Find Hospitals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="{% url 'register' %}">Register Hospitals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#" class="login-button">Login</a>
+            <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+        <!-- End-Navbar -->
+
+    {% endblock %}
+
+
+{% block footer %}
+     <footer>
+            <div class="block top-padd80 bottom-padd80 dark-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <div class="footer-data">
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-6 col-lg-3">
+                                        <div class="widget about_widget wow fadeIn" data-wow-delay="0.1s">
+                                            <div class="logo"><h1 itemprop="headline"><a href="#" title="Home" itemprop="url"><img src="assets/images/logo.png" alt="logo.png" itemprop="image"></a></h1></div>
+                                            <p itemprop="description">MedSelect helps you find a hosptal that best suits your needs and thus saves time and resources</p>
+                                            <div class="social2">
+                                                <a class="brd-rd50" href="#" title="Facebook" itemprop="url" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                <a class="brd-rd50" href="#" title="Google Plus" itemprop="url" target="_blank"><i class="fa fa-google-plus"></i></a>
+                                                <a class="brd-rd50" href="#" title="Twitter" itemprop="url" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                <a class="brd-rd50" href="#" title="Pinterest" itemprop="url" target="_blank"><i class="fa fa-pinterest"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-lg-3">
+                                        <div class="widget information_links wow fadeIn" data-wow-delay="0.2s">
+                                            <h4 class="widget-title" itemprop="headline">INFORMATION</h4>
+                                            <ul>
+                                                <li><a href="#" title="" itemprop="url">Careers</a></li>
+                                                <li><a href="#" title="" itemprop="url">Investor Relations</a></li>
+                                                <li><a href="#" title="" itemprop="url">More Branches</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-lg-3">
+                                        <div class="widget customer_care wow fadeIn" data-wow-delay="0.3s">
+                                            <h4 class="widget-title" itemprop="headline">QUICK LINKS</h4>
+                                            <ul>
+                                                <li><a href="#" title="" itemprop="url">Find Hospitals</a></li>
+                                                <li><a href="#" title="" itemprop="url">Register Hospital</a></li>
+                                                <li><a href="#" title="" itemprop="url">Blog</a></li>
+                                                <li><a href="#" title="" itemprop="url">Contact Us</a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-lg-3">
+                                        <div class="widget get_in_touch wow fadeIn" data-wow-delay="0.4s">
+                                            <h4 class="widget-title" itemprop="headline">GET IN TOUCH</h4>
+                                            <ul>
+                                               <li><i class="fa fa-map-marker"></i>  InnovateSolutions, Innovate Building, Nairobi, Kenya.</li>
+                                               <li><i class="fa fa-phone"></i> +(254) 768764442</li>
+                                               <li><i class="fa fa-envelope"></i> <a href="#" title="" itemprop="url"><span class="__cf_email__" data-cfemail="b5ddd0d9d9daf5ccdac0c7d1dad8d4dcdb9bd6dad8">[email&#160;protected]</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- Footer Data -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--botton bar-->
+        <div class="bottom-bar dark-bg text-center">
+            <div class="container">
+                <p itemprop="description">&copy; 2023 <a class="red-clr" href="http://medselect.com/" title="MedSelect" itemprop="url" target="_blank">MedSelect</a>. All Rights Reserved</p>
+            </div>
+        </div>
+    {% endblock %}
+<script src="{% static 'javascript/main.js' %}"></script>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
