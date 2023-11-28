@@ -1,1 +1,104 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block title %}
+    	<title>Find Hospitals</title>
+    {% endblock title %}
+{% block links %}
+
+
+      <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+    <link rel="stylesheet" href="{% static 'stylings/num2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icofont.min.css'  %}">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+ {% endblock links %}
+{% block content %}
+<section>
+            <div class="block">
+                <div class="fixed-bg" style="background-color: #1a76d1;"></div>
+                <div class="page-title-wrapper text-center">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <div class="page-title-inner">
+                            <h1 itemprop="headline">Find hospitals</h1>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+   <section style="background-color: #1a76d1;">
+   <div class="container " id="findH">
+   <form class="restaurant-search-form brd-rd2">
+                            <div class="row mrg10">
+
+                                <div class="col-md-3 col-sm-3 col-lg-3 col-xs-12">
+                                    <div class="input-field brd-rd2"><input class="brd-rd2" type="text" name="county" placeholder="County"></div>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-lg-3 col-xs-12">
+                                    <div class="input-field brd-rd2"><input class="brd-rd2" type="text"  name="constituency" placeholder="Constituency"></div>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-lg-3 col-xs-12">
+                                    <div class="input-field brd-rd2"><input class="brd-rd2" type="text" name="specializations" placeholder="Specialization"></div>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-lg-3 col-xs-12">
+                                    <button class="btn btn-primary brd-rd2" type="submit">SEARCH</button>
+                                </div>
+                            </div>
+                        </form>
+       </div>
+
+   </section>
+
+    <section>
+    <div class="container-fluid">
+    <h2>Your Search Results........</h2>
+    <div class="container">
+    <div class="row">
+        <ul>
+            {% for hosi in queryset %}
+                <li>
+             <div class="card mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="{% static 'images/author1.jpg' %}" class="card-img" alt="{{ hosi.name }}">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hospital Name: {{ hosi.name }}</h5>
+                                    <p class="card-text">Specialization:
+                                        {% for specialization in hosi.specializations.all %}
+                                            {{ specialization.name }}
+                                        {% endfor %}
+                                    </p> <br>
+                                    <p class="card-text">County: {{ hosi.county }}</p><br>
+                                    <p class="card-text">Constituency: {{ hosi.constituency }}</p> <br>
+                                    <p class="card-text">NHIF Coverage:
+                                                    {% if hosi.nhif_coverage %}
+                                                        Yes
+                                                    {% else %}
+                                                        No
+                                                    {% endif %}
+                                                </p> <br>
+                                    <p class="card-text">Contact Phone: {{ hosi.contact_phone }}</p> <br>
+                                    <p class="card-text">Contact Email: {{ hosi.contact_email }}</p> <br>
+                                    <!-- Add other fields as needed -->
+
+                                    <!-- Your existing content here -->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+            {% endfor %}
+        </ul>
+    </div>
+    </div>
+    </div>
+    </section>
+
+{% endblock content %}
 

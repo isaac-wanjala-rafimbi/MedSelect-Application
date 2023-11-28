@@ -21,6 +21,9 @@ from HospitalSelect import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home),
-    path('register/', views.register, name='register')
+    path('', views.home, name='home'),
+    path('register/', views.register, name='register'),
+    path('find/', views.find, name='findHospitals'),
+    path('blog/', views.blog, name='blog'),
+    path('contact/', views.contact, name='contact')
 ]
