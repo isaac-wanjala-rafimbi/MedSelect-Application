@@ -1,4 +1,6 @@
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 from .models import County, Constituency, Specialization, Hospital
 
 
@@ -25,3 +27,10 @@ class HospitalForm(forms.ModelForm):
         model = Hospital
         fields = ['name', 'county', 'constituency', 'specializations', 'nhif_coverage', 'photo', 'contact_phone',
                   'contact_email', 'country']
+
+
+class CreateUserForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
+
