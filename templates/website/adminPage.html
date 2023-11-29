@@ -3,8 +3,102 @@
 {% block title %}
     	<title>Find Hospitals</title>
     {% endblock title %}
+
+{% block nav %}
+   <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand me-auto" href="#"><a href="#" title="Home" itemprop="url"><img src="{% static 'images/myreallogo.png' %}" alt="logo.png" itemprop="image" width="180" height="100"></a></a>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"> <a href="#" title="Home" itemprop="url"><img src="{% static 'images/myreallogo.png' %}" alt="logo.png" itemprop="image"></a></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+            </div>
+                 <span>Hello, {{ request.user }} </span>
+             <a href="{% url 'logout' %}" class="login-button">Logout</a>
+            <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+        </div>
+    </nav>
+{% endblock nav %}
+
+
+
+        <!-- End-Navbar -->
 {% block content %}
 
-    <section></section>
+    <section>
+            <div class="block">
+                <div class="fixed-bg" style="background-color: #1a76d1;"></div>
+                <div class="page-title-wrapper text-center">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <div class="page-title-inner">
+                            <h1 itemprop="headline">Registered Hospitals</h1>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+   <section style="margin-top: 10px;">
+    <div class="container">
+
+    <table class="table table-dark table-striped-columns">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>County</th>
+                <th>Constituency</th>
+                <th>Specializations</th>
+                <th>Photo</th>
+                <th>NHIF Coverage</th>
+                <th>Contact Phone</th>
+                <th>Contact Email</th>
+                <th>Country</th>
+                <th>Actions</th> <!-- Added a column for actions -->
+                <!-- Add more headers based on your Hospital model fields -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for hospital in hospitals %}
+
+                <tr>
+                    <td>{{ hospital.name }}</td>
+                    <td>{{ hospital.county.name }}</td>
+                    <td>{{ hospital.constituency.name }}</td>
+                    <td>
+                        {% for specialization in hospital.specializations.all %}
+                            {{ specialization.name }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% if hospital.photo %}
+                            <img src="{{ hospital.photo.url }}" alt="{{ hospital.name }} Photo" width="50" height="50">
+                        {% else %}
+                            No Photo
+                        {% endif %}
+                    </td>
+                    <td>{% if hospital.nhif_coverage %}Yes{% else %}No{% endif %}</td>
+                    <td>{{ hospital.contact_phone }}</td>
+                    <td>{{ hospital.contact_email }}</td>
+                    <td>{{ hospital.country }}</td>
+                    <td>
+                        <a href="{% url 'update_hospital' hospital.id %}">Update</a>
+                        <a href="{% url 'delete_hospital' hospital.id %}">Delete</a>
+                    </td>
+                    <!-- Add more columns based on your Hospital model fields -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+   </section>
 {% endblock content %}

@@ -26,9 +26,12 @@ urlpatterns = [
     path('find/', views.find, name='findHospitals'),
     path('blog/', views.blog, name='blog'),
     path('contact/', views.contact, name='contact'),
-    path('login/', views.login, name='login'),
+    path('login/', views.loginPage, name='login'),
+    path('login/', views.logoutUser, name='logout'),
     path('regist/', views.registerAccount, name='regist'),
-    path('adminPage/', views.adminPage, name='admin')
+    path('adminPage/', views.adminPage, name='admin'),
+    path('update_hospital/<int:hospital_id>/', views.update_hospital, name='update_hospital'),
+    path('delete_hospital/<int:hospital_id>/', views.delete_hospital, name='delete_hospital'),
 
 
 ]

@@ -19,7 +19,7 @@
 
 </head>
 <body>
-
+{% block nav %}
    <!-- Navbar -->
         <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
@@ -60,6 +60,7 @@
 
         </div>
     </nav>
+{% endblock nav %}
         <!-- End-Navbar -->
    {% block content %}
    	<h1>Hello</h1>
@@ -91,9 +92,7 @@
                                         <div class="widget information_links wow fadeIn" data-wow-delay="0.2s">
                                             <h4 class="widget-title" itemprop="headline">INFORMATION</h4>
                                             <ul>
-                                                <li><a href="#" title="" itemprop="url">Careers</a></li>
-                                                <li><a href="#" title="" itemprop="url">Investor Relations</a></li>
-                                                <li><a href="#" title="" itemprop="url">More Branches</a></li>
+
                                             </ul>
                                         </div>
                                     </div>
