@@ -37,5 +37,7 @@ class Hospital(models.Model):
     contact_email = models.EmailField(null=True, blank=True)
     country = models.CharField(max_length=255, null=True, blank=True)
 
+
+
     def __str__(self):
         return self.name

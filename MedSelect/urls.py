@@ -16,6 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 from HospitalSelect import views
 
@@ -30,8 +33,11 @@ urlpatterns = [
     path('login/', views.logoutUser, name='logout'),
     path('regist/', views.registerAccount, name='regist'),
     path('adminPage/', views.adminPage, name='admin'),
-    path('update_hospital/<int:hospital_id>/', views.update_hospital, name='update_hospital'),
-    path('delete_hospital/<int:hospital_id>/', views.delete_hospital, name='delete_hospital'),
+    path('update_hospital/<hospital_id>/', views.update_hospital, name='update_hospital'),
+    path('delete_hospital/<hospital_id>/', views.delete_hospital, name='delete_hospital'),
+
 
 
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

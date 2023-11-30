@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,6 +25,14 @@ SECRET_KEY = 'django-insecure-+c@nkh&nf%qw*ei0n!-%2yij5(rtee@qea9shp6%l(1i58-a0a
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = '4da18fd2bfe059'
+EMAIL_HOST_PASSWORD = '99c33bbf0a7a99'
+EMAIL_PORT = '2525'
+EMAIL_USE_TLS = True
+
 
 ALLOWED_HOSTS = []
 
@@ -122,6 +131,12 @@ USE_TZ = True
 import os.path
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join('static')]
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / "media"
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
