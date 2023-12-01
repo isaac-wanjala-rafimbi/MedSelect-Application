@@ -43,158 +43,114 @@
 
                                             </div>
                                         </div>
+
+
                                         <div class="col-md-9 col-sm-12 col-lg-9">
                                             <div class="reservation-tab-content">
                                                <div class="tab-content" id="v-pills-tabContent">
                                                      <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                                            <form class="restaurant-info-form brd-rd5" method="POST" enctype="multipart/form-data">
                                                                     {% csrf_token %}
-                                                                    <p>
-                                                                      {{ form.as_p }}
-                                                                    </p>
+                                                                    <div class="mb-3">
+                    {{ form.name.label_tag }}
+                    {{ form.name }}
+                </div>
 
-                                                               <input type="submit" value="Submit">
+                <div class="mb-3">
+                    {{ form.county.label_tag }}
+                    {{ form.county }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.constituency.label_tag }}
+                    {{ form.constituency }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.specializations.label_tag }}
+                    {{ form.specializations }}
+                </div>
+
+                <div class="mb-3 form-check">
+                    {{ form.nhif_coverage }}
+                    {{ form.nhif_coverage.label_tag }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.photo.label_tag }}
+                    {{ form.photo }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.contact_phone.label_tag }}
+                    {{ form.contact_phone }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.contact_email.label_tag }}
+                    {{ form.contact_email }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.country.label_tag }}
+                    {{ form.country }}
+                </div>
+                                                              <button type="submit" class="btn btn-primary">Submit</button>
                                                                 </form>
 
 
-                                                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">  <div class="select-package-wrapper">
-                                                            <h4 itemprop="headline">BUY MEMBERSHIP</h4>
-                                                            <div class="remove-ext3">
-                                                                <div class="row mrg10">
-                                                                    <div class="col-md-4 col-sm-4 col-lg-4">
-                                                                        <div class="packege-box brd-rd5 text-center">
-                                                                            <div class="package-header brd-rd5">
-                                                                                <h4 itemprop="headline">BASIC FREE</h4>
-                                                                                <span class="red-clr">$15.00 / <small>MO</small></span>
-                                                                            </div>
-                                                                            <ul class="package-body">
-                                                                                <li>Membership Duration</li>
-                                                                                <li>Hospital Duration</li>
-                                                                                <li>Number of Tags</li>
-                                                                                <li>Reviews</li>
-                                                                                <li>Phone Number</li>
-                                                                                <li>Website Link</li>
-                                                                            </ul>
-                                                                            <a class="brd-rd2" href="#" title="" itemprop="url">SELECT PLAN</a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-lg-4">
-                                                                        <div class="packege-box brd-rd5 text-center">
-                                                                            <div class="package-header brd-rd5">
-                                                                                <h4 itemprop="headline">BASIC FREE</h4>
-                                                                                <span class="red-clr">$15.00 / <small>MO</small></span>
-                                                                            </div>
-                                                                            <ul class="package-body">
-                                                                                <li>Membership Duration</li>
-                                                                                <li>Hospital Duration</li>
-                                                                                <li>Number of Tags</li>
-                                                                                <li>Reviews</li>
-                                                                                <li>Phone Number</li>
-                                                                                <li>Website Link</li>
-                                                                            </ul>
-                                                                            <a class="brd-rd2" href="#" title="" itemprop="url">SELECT PLAN</a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-lg-4">
-                                                                        <div class="packege-box brd-rd5 text-center">
-                                                                            <div class="package-header brd-rd5">
-                                                                                <h4 itemprop="headline">BASIC FREE</h4>
-                                                                                <span class="red-clr">$15.00 / <small>MO</small></span>
-                                                                            </div>
-                                                                            <ul class="package-body">
-                                                                                <li>Membership Duration</li>
-                                                                                <li>Hospital Duration</li>
-                                                                                <li>Number of Tags</li>
-                                                                                <li>Reviews</li>
-                                                                                <li>Phone Number</li>
-                                                                                <li>Website Link</li>
-                                                                            </ul>
-                                                                            <a class="brd-rd2" href="#" title="" itemprop="url">SELECT PLAN</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="step-buttons">
-                                                                <a class="brd-rd3" href="#" title="" itemprop="url">Back Step</a>
-                                                                <a class="brd-rd3 red-bg" href="#" title="" itemprop="url">Next Step</a>
-                                                            </div>
-                                                        </div></div>
-                                                        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"><form class="restaurant-info-form brd-rd5">
-                                                            <div class="row mrg20">
-                                                                <div class="col-md-6 col-sm-6 col-lg-6">
-                                                                    <label>First Name <sup>*</sup></label>
-                                                                    <input class="brd-rd3" type="text">
-                                                                </div>
-                                                                <div class="col-md-6 col-sm-6 col-lg-6">
-                                                                    <label>Last Name <sup>*</sup></label>
-                                                                    <input class="brd-rd3" type="text">
-                                                                </div>
-                                                                <div class="col-md-6 col-sm-6 col-lg-6">
-                                                                    <label>Email <sup>*</sup></label>
-                                                                    <input class="brd-rd3" type="email">
-                                                                </div>
-                                                                <div class="col-md-6 col-sm-6 col-lg-6">
-                                                                    <label>Phone <sup>*</sup></label>
-                                                                    <input class="brd-rd3" type="text">
-                                                                </div>
-                                                                <div class="col-md-12 col-sm-12 col-lg-12">
-                                                                    <label>Address <sup>*</sup></label>
-                                                                    <textarea class="brd-rd3"></textarea>
-                                                                </div>
-                                                                <div class="col-md-12 col-sm-12 col-lg-12">
-                                                                    <div class="step-buttons">
-                                                                        <a class="brd-rd3" href="#" title="" itemprop="url">Back Step</a>
-                                                                        <a class="brd-rd3 red-bg" href="#" title="" itemprop="url">Next Step</a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form></div>
-                                                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"><div class="order-wrapper2 brd-rd5">
-                                                            <h4 itemprop="headlie">YOUR ORDER</h4>
-                                                            <ul class="ordr-lst brd-rd5">
-                                                                <li class="lst-hed">PRODUCT <span>TOTAL</span></li>
-                                                                <li>Product X 1 <span>$90.00</span></li>
-                                                                <li>Subtotal <span>$90.00</span></li>
-                                                                <li>Gov Tax <span>$2.70</span></li>
-                                                                <li class="red-bg">Total <span>$92.70</span></li>
-                                                            </ul>
-                                                            <div class="pay-mnt">
-                                                                <span class="radio-box">
-                                                                    <input type="radio" name="pay-mthd" id="mthd1">
-                                                                    <label for="mthd1">Direct Bank Transfer</label>
-                                                                </span>
-                                                                <span class="radio-box">
-                                                                    <input type="radio" name="pay-mthd" id="mthd2">
-                                                                    <label for="mthd2">Check payments</label>
-                                                                </span>
-                                                                <span class="radio-box">
-                                                                    <input type="radio" name="pay-mthd" id="mthd3">
-                                                                    <label for="mthd3">Cash on delivery</label>
-                                                                </span>
-                                                                <span class="radio-box">
-                                                                    <input type="radio" name="pay-mthd" id="mthd4">
-                                                                    <label for="mthd4">Paypal <img src="assets/images/pay-mthd-img.jpg" alt="pay-mthd-img.jpg" itemprop="image"></label>
-                                                                </span>
-                                                            </div>
-                                                            <div class="ordr-btn">
-                                                                <a class="red-bg brd-rd5" href="#" title="" itemprop="url">Place Order</a>
-                                                            </div>
-                                                        </div></div>
-
-
-
-                                                </div>
+                                                     </div>
+                                               </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                </div><!-- Section Box -->
+                                </div>
                             </div>
                         </div>
                     </div>
-
             </div>
-            </div>
-        </section>
-
+</section>
 {% endblock content %}
+
+{% block scripts %}
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        function submitForm() {
+            // Assuming you have a JavaScript variable 'message' containing the success message
+            var message = "Hospital Registered successfully!";
+
+            // Display a styled pop-up using SweetAlert
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: message,
+            }).then((result) => {
+                // Check if the user clicked "OK"
+                if (result.isConfirmed || result.isDismissed) {
+                    // Reload the page
+                    location.reload();
+                }
+            });
+
+            // Prevent the form from being submitted (remove this line if you want the form to be submitted)
+            return false;
+        }
+    </script>
+
+    <script src="{% static 'javascript/main.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+{% endblock scripts %}
+

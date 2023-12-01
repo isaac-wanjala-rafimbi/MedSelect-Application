@@ -27,6 +27,19 @@ class HospitalForm(forms.ModelForm):
         model = Hospital
         fields = ['name', 'county', 'constituency', 'specializations', 'nhif_coverage', 'photo', 'contact_phone',
                   'contact_email', 'country']
+        widget = {
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'county': forms.Select(attrs={'class': 'form-control'}),
+            'constituency': forms.Select(attrs={'class': 'form-control'}),
+            'specializations': forms.CheckboxSelectMultiple(),
+            'photo': forms.ClearableFileInput(attrs={'class': 'form-control'}),
+            'nhif_coverage': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'contact_phone': forms.TextInput(attrs={'class': 'form-control'}),
+            'contact_email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'country': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+
 
 
 class CreateUserForm(UserCreationForm):

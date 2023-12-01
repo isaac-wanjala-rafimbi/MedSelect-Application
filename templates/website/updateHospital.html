@@ -1,9 +1,38 @@
 {% extends 'website/base.html' %}
+{% load static %}
 {% block title %}
     <title>Update Hospital</title>
 {% endblock title %}
 
+
+{% block nav %}
+   <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand me-auto" href="#"><a href="#" title="Home" itemprop="url"><img src="{% static 'images/myreallogo.png' %}" alt="logo.png" itemprop="image" width="180" height="100"></a></a>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"> <a href="#" title="Home" itemprop="url"><img src="{% static 'images/myreallogo.png' %}" alt="logo.png" itemprop="image"></a></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+            </div>
+                 <span>Hello, {{ request.user }} </span>
+             <a href="{% url 'logout' %}" class="login-button">Logout</a>
+            <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+        </div>
+    </nav>
+{% endblock nav %}
+
+
 {% block content %}
+
 
 
     <section>
@@ -19,16 +48,64 @@
                 </div>
             </div>
         </section>
-   <section>
-    <div class="container">
-        <h2>Update Hospital: {{ hospital.name }}</h2>
-        <form method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
-            {% csrf_token %}
-            <div class="mb-3">
-                {{ form.as_p }}
-            </div>
-            <button type="submit" class="btn btn-primary">Update</button>
-        </form>
+
+   <section style="background-color: #E0E5E9; padding: 30px;">
+    <div class="container" style="border: 1px solid #1E90FF; border-radius: 10px; padding: 20px;">
+        <h2 class="mb-4" style="color: #1E90FF;">Update Hospital: {{ hospital.name }}</h2>
+        <div class="form-group">
+            <form method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    {{ form.name.label_tag }}
+                    {{ form.name }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.county.label_tag }}
+                    {{ form.county }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.constituency.label_tag }}
+                    {{ form.constituency }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.specializations.label_tag }}
+                    {{ form.specializations }}
+                </div>
+
+                <div class="mb-3 form-check">
+                    {{ form.nhif_coverage }}
+                    {{ form.nhif_coverage.label_tag }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.photo.label_tag }}
+                    {{ form.photo }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.contact_phone.label_tag }}
+                    {{ form.contact_phone }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.contact_email.label_tag }}
+                    {{ form.contact_email }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.country.label_tag }}
+                    {{ form.country }}
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="background-color: #1E90FF;">Update</button>
+            </form>
+        </div>
     </div>
 </section>
+
+
 {% endblock content %}
