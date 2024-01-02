@@ -1,7 +1,7 @@
 {% extends 'website/base.html' %}
 {% load static %}
 {% block title %}
-    	<title>Find Hospitals</title>
+    	<title>Admin</title>
     {% endblock title %}
 
 {% block links %}
@@ -95,9 +95,9 @@
                     </td>
                     <td>
                         {% if hospital.photo %}
-                            <img src="{{ hospital.photo.url }}" alt="{{ hospital.name }} Photo" width="90%" height="100%%">
+                            <img src="{{ hospital.photo.url }}" alt="{{ hospital.name }} Photo" width="100%" height="100%%">
                         {% else %}
-                           <img src="{% static 'images/hospital3.jpg'%}" alt="Photo" width="90%" height="100%%">
+                           <img src="{% static 'images/hospital3.jpg'%}" alt="Photo" width="100%" height="100%%">
                         {% endif %}
                     </td>
                     <td>{% if hospital.nhif_coverage %}Yes{% else %}No{% endif %}</td>

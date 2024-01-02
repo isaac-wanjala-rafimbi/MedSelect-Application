@@ -6,12 +6,12 @@
 
  {% block content %}
 
-   <section>
-            <div class="block">
-                <div style="background-image: url(static/images/hosi-dark.png);  background-color: rgba(0, 0, 0, 1.0);" class="fixed-bg"></div>
+   <section style="height: 600px;">
+            <div class="block" style="height: 100%;">
+                <div style="background-image: url(static/images/hosi-dark.png);  background-color: rgba(0, 0, 0, 1.0);  height: 100%;" class="fixed-bg"></div>
                 <div class="restaurant-searching text-center">
                     <div class="restaurant-searching-inner">
-                        <h2 itemprop="headline"  style="color: #2d87be;">Find a Hospital that Best suits your needs</h2>
+                        <h2 itemprop="headline"  style="color: #2d87be; margin-top: 150px">Find a Hospital that Best suits your needs</h2>
                        <a href="{% url 'findHospitals' %}" style="text-decoration: none;">
                         <button style="background: none; border: 2px solid blue; width: 30%; color: #2d87be; border-radius: 10px;">Find Hospitals</button>
                            </a>

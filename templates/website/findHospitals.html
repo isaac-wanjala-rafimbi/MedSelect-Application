@@ -55,9 +55,11 @@
 
     <div class="container">
     <div class="row">
+     {% if queryset %}
+         <p>Available Hospitals</p>
         <ul style="list-style-type: none;">
 
-           <h2>Available Hospitals</h2>
+
 
             {% for hospital in queryset %}
 
@@ -107,6 +109,9 @@
             {% endfor %}
 
         </ul>
+     {% else %}
+                    <p>No results found.</p>
+                {% endif %}
     </div>
     </div>
     </div>
